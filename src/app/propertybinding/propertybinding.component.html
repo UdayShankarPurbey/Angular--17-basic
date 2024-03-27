@@ -1,0 +1,17 @@
+<input type="text" value="property1"/>
+<br/>
+<input type="text" [value]=property2/>
+<br/>
+<input type="text" value={{property3}}/>
+
+<hr/>
+
+
+<input type="text" [disabled]=property4 placeholder="property Binding"/>
+<br/>
+<button (click)="propertyBinding()">Property Binding</button>
+<br/><br/>
+<p>It Not work just for difference between Interpolation and property binding</p>
+<input type="text" disabled={{property5}} placeholder="Interpolation"/>
+<br/>
+<button (click)="interpolation()">Interpolation</button>

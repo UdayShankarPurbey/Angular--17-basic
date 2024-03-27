@@ -1,0 +1,21 @@
+nav {
+    background-color: cyan;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+nav img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+nav ul {
+    float:  right;
+}
+
+nav ul a {
+    display: inline-block;
+    margin: 15px 0px 0px 20px;
+    text-decoration: none;
+
+}

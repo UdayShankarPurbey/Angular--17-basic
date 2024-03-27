@@ -1,0 +1,7 @@
+<ul *ngFor="let item of userDetails">
+    <li>{{item?.name}}</li>
+    <li>{{item?.email}}</li>
+    <ul *ngFor="let item of item?.socialAccount">
+        <li>{{item}}</li>
+    </ul>
+</ul>

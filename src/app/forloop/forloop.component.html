@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <td>User Id</td>
+        <td>User Name</td>
+        <td>Account Type</td>
+        <td>File Name</td>
+        <td>Prompt Id</td>
+        <td>Prompt Category</td>
+        <td>Prompt Status</td>
+    </thead>
+    <tbody *ngFor="let item of voices">
+        <tr>
+            <td>{{item?.userId}}</td>
+            <td>{{item?.username}}</td>
+            <td>{{item?.accountType}}</td>
+            <td>{{item?.fileName}}</td>
+            <td>{{item?.promptId}}</td>
+            <td>{{item?.promptCategory}}</td>
+            <td>{{item?.promptStatus}}</td>
+
+        </tr>
+    </tbody>
+</table>

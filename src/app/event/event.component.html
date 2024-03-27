@@ -1,0 +1,14 @@
+<h2>Events</h2>
+<input type="text" id="title" placeholder='keyup' #box (keyup)="getboxData(box.value)" />
+<br />
+<input type="text" id="title" placeholder="keydown" #box1 (keydown)="getboxData(box1.value)" />
+<br />
+<input type="text" id="title" placeholder="blur" #box2 (blur)="getboxData(box2.value)" />
+<br />
+<input type="text" id="title" placeholder=" input " #box3 (input)="getboxData(box3.value)" />
+<br />
+<button (click)="getdata()" >data</button>
+
+<h1 (mouseover)="geteve('h1')">uday</h1>
+<h1 (mouseleave)="geteve('leaved')">uday2</h1>
+

@@ -1,0 +1,12 @@
+<input type="text" placeholder="Enter Your Task" #task id="task"/>
+
+<br/><br/>
+
+<button (click)="addTask(task.value)">Add Task</button>
+
+<ul *ngFor="let item of tasks">
+    <li >       
+        <p>{{item?.task}}</p>
+        <mat-icon fontIcon="delete" (click)="deleteTask(item?.id)"></mat-icon>
+    </li>
+</ul>

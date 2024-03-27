@@ -1,0 +1,15 @@
+
+<input type="text" placeholder="Enter Name" #name (input)="getValue(name.value)"/>
+<br/>
+<p>Name Value : {{NameValue}}</p>
+<hr/>
+<input type="text" placeholder="Enter Email" #email />
+<br/>
+<button (click)="getValueData(email.value)">Submit</button>
+<br/>
+<p>Email Value : {{EmailValue}}</p>
+
+<hr/>
+<button (click)="counter('sub')">--</button>
+<p>{{Value}}</p>
+<button (click)="counter('add')">++</button>

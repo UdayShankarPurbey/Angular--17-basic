@@ -1,0 +1,25 @@
+<input type="number" placeholder="Enter Marks" #number/>
+
+<button (click)="getMarks(number.value)">Submit</button>
+
+
+
+<ng-template [ngIf]="marks > 90">
+    <h1>Excellent : {{marks}}</h1>    
+</ng-template>
+
+<ng-template [ngIf]="marks > 80">
+    <h1>Good : {{marks}}</h1>    
+</ng-template>
+
+<ng-template [ngIf]="marks > 50">
+    <h1>Average : {{marks}}</h1>    
+</ng-template>
+
+<ng-template [ngIf]="marks > 35">
+    <h1>Pass : {{marks}}</h1>    
+</ng-template>
+
+<ng-template [ngIf]="marks < 35">
+    <h1>Fail : {{marks}}</h1>    
+</ng-template>

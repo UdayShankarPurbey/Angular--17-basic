@@ -1,0 +1,29 @@
+<span *ngIf="expression">True</span>
+<br/>
+<button (click)="show()"> Show </button>
+
+<br/><br/>
+<span *ngIf="dataExpression;then ifBlock else elseBlock"></span>
+<br/>
+<button (click)="showData()"> Show Data</button>
+<ng-template #ifBlock>
+    <span>If Block</span>
+</ng-template>
+
+<ng-template #elseBlock>
+    <span>Else Block</span>
+</ng-template>
+
+<br/><br/>
+<span *ngIf="dataExpressionField == 'Hey';then heyBlock else helloBlock"></span>
+<br/>
+<button (click)="showDataCondition()"> Greeting Block</button>
+<ng-template #heyBlock>
+    <span>Hey Block</span>
+</ng-template>
+
+<ng-template #helloBlock>
+    <span>Hello Block</span>
+</ng-template>
+
+
