@@ -7,21 +7,75 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [
     CommonModule,
-    MatIconModule
+    MatIconModule,
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })
+
 export class TodoListComponent {
   id = 0;
-  tasks : {id : number , task : any , status: 'sucess' | 'failed'}[] = [];
-  addTask(data : any) {
-    this.tasks.push({id : this.id++, task : data ,status : 'failed'});
-    
-  }
+  selectedTaskId: number | null = null; // Track the ID of the task being edited
+  tasks: { id: number, task: string, status: 'success' | 'failed' | 'notDefined' }[] = [];
+  disptask: { id: number, task: string , status: 'success' | 'failed' | 'notDefined' }[] = [];
  
-  deleteTask(data : any) { 
-    this.tasks = this.tasks.filter((x : any) => x.id != data);
+
+  addTask(data: any) {
+    this.tasks.push({ id: this.id++, task: data, status: 'notDefined' });
   }
 
+  deleteTask(taskId: number) {
+    this.tasks = this.tasks.filter(task => task.id !== taskId);
+  }
+
+  editTask(taskId: any) {
+    this.selectedTaskId = taskId; // Set the ID of the task being edited
+  }
+
+
+  updateTask(data: string) {
+    console.log(data);
+
+    const taskIndex = this.tasks.findIndex(task => task.id === this.selectedTaskId);
+    if (taskIndex !== -1) {
+      this.tasks[taskIndex].task = data;
+      this.selectedTaskId = null; 
+    }
+  }
+
+  checkTask( taskId: any) {
+    const taskIndex = this.tasks.find(task => task.id === taskId);
+    if(taskIndex) {
+      taskIndex.status = 'success';
+    }
+  }
+
+  uncheckedTask(taskId: any) {
+    console.log(taskId);
+    const taskIndex = this.tasks.find(task => task.id === taskId);
+    if(taskIndex) {
+      taskIndex.status = 'failed';
+    }
+  }
+
+  completeTask() {
+    this.disptask = this.tasks.filter(task => task.status == 'success')
+    if(this.disptask.length < 1) {
+      alert("No data found! Please try again")
+    }
+  }
+
+  pendingTask() {
+    this.disptask = this.tasks.filter(task => task.status == 'failed')
+    if(this.disptask.length < 1) {
+      alert("No data found! Please try again")
+    }
+  }
+
+  allTask() {
+    this.disptask = this.tasks
+    if(this.disptask.length < 1) {
+      alert("No data found! Please try again")
+    }
+  }
 }

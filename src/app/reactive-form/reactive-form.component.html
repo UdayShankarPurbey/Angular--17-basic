@@ -1,0 +1,13 @@
+<form [formGroup]="rctForm" (ngSubmit)="getData()">
+    <input type="text" name="name" placeholder="Enter Name" formControlName="name" />
+    <span *ngIf="name23 && name23.invalid && name23.touched">Please Enter Your Name</span>
+    <br/><br/>
+    <input type="text" name="email" placeholder="Enter Email" formControlName="email" />
+    <span *ngIf="email && email.invalid && email.touched">Invalid Email Address</span>
+    <br/><br/>
+    <input type="text" name="password" placeholder="Enter Password " formControlName="password" />
+    <span *ngIf="password && password.invalid && password.touched">Password must between 3 - 30 Character </span>
+
+    <br/><br/>
+    <button type="submit" [disabled]="rctForm.invalid">Submit</button> 
+</form>

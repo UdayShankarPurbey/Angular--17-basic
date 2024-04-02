@@ -1,8 +1,22 @@
 ul li {
    display: flex;
-    
+   padding: 10px;
+
 }
-ul li p {
-    font-size: medium;
-    color: aqua;
-}
+
+ul li p  {
+    font-size: large;
+    &.success {
+      color: green;
+      text-decoration: line-through;
+    }
+  
+    &.failed {
+      color: red;
+    }
+
+    &.notDefined {
+        color: cyan;
+    }
+  }
+  

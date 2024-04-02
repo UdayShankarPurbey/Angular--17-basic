@@ -22,6 +22,11 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { TemplateReferenceVariableComponent } from './template-reference-variable/template-reference-variable.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { UsdToInrPipe } from './pipes/usd-to-inr.pipe';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +46,7 @@ import { UsdToInrPipe } from './pipes/usd-to-inr.pipe';
     HeaderComponent,
     FormComponent,
     ToggleComponent,
+    BootstrapComponent,
     MaterialUiComponent,
     TodoListComponent,
     SendDataParentToChildModule,
@@ -49,12 +55,17 @@ import { UsdToInrPipe } from './pipes/usd-to-inr.pipe';
     TwoWayBindingComponent,
     TemplateReferenceVariableComponent,
     PipesComponent,
+    TemplateDrivenFormComponent,
+    ReactiveFormComponent,
+    DirectivesComponent,
+    ReactiveFormsModule,
+
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'basic-01';
- 
+  
   
 }

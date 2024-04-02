@@ -1,12 +1,31 @@
-<input type="text" placeholder="Enter Your Task" #task id="task"/>
+<input type="text" placeholder="Enter Your Task" #task/>
 
 <br/><br/>
 
 <button (click)="addTask(task.value)">Add Task</button>
+<button (click)="completeTask()">Complete Task</button>
+<button (click)="pendingTask()">Pending Task</button>
+<button (click)="allTask()">All Task</button>
+
+
+
 
 <ul *ngFor="let item of tasks">
-    <li >       
-        <p>{{item?.task}}</p>
-        <mat-icon fontIcon="delete" (click)="deleteTask(item?.id)"></mat-icon>
+    <li >
+      <ng-container *ngIf="selectedTaskId !== item.id; else editField">
+        <p [ngClass]="{'success': item.status === 'success', 'failed': item.status === 'failed','notDefined': item.status === 'notDefined'}">{{item?.task}}</p>
+      </ng-container>
+      <ng-template #editField>
+        <input type="text" #updateTaskValue [value]="item?.task">
+        <button (click)="updateTask(updateTaskValue.value)">Update Task</button>
+      </ng-template>
+      <mat-icon fontIcon="edit" (click)="editTask(item.id)"></mat-icon>
+      <mat-icon fontIcon="check" (click)="checkTask(item.id)"></mat-icon>
+      <mat-icon fontIcon="close" (click)="uncheckedTask(item.id)"></mat-icon>
+      <mat-icon fontIcon="delete" (click)="deleteTask(item.id)"></mat-icon>
     </li>
+  </ul>
+
+<ul *ngFor="let item of disptask">
+    <li>{{item?.id}} -- {{item?.task}} --{{item?.status}}</li>
 </ul>
