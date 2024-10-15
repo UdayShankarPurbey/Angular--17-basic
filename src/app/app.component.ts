@@ -27,6 +27,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { SomeAnotherComeptsComponent } from './01_some-another-comepts/some-another-comepts/some-another-comepts.component';
 
 @Component({
   selector: 'app-root',
@@ -59,6 +60,9 @@ import {  ReactiveFormsModule } from '@angular/forms';
     ReactiveFormComponent,
     DirectivesComponent,
     ReactiveFormsModule,
+
+    //some another concept component
+    SomeAnotherComeptsComponent
 
   ],
   templateUrl: './app.component.html',

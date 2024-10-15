@@ -1,0 +1,16 @@
+<p>custom-directive works!</p>
+
+<!--  I wnat that color is blue if number is divisible by 5 and else green  -->
+
+
+<!-- <div [ngClass]="{blue : number % 5 == 0 , green : number % 5 != 0  }" >{{number}}</div> -->
+
+
+<!-- The above functionality work on click  -->
+
+<!-- <div [ngClass]="{blue : isClicked && number % 5 == 0 , green : isClicked && number % 5 != 0  }" (click)="toggleClick()" >{{number}}</div> -->
+
+
+<!-- If the click functionaliy apply on many place we have to add in html part as well as ts part changes to to reduces this we use directives -->
+
+<div appColorChanger [number]="number" [disibleBy]="5"  >{{number}}</div>
